@@ -21,10 +21,18 @@ while(op != '4'):
         print("Sua identidade: "+key)
     elif(op == '2'):
         os.system("clear")
-        print("Tamo no 2")
+        msgs = c.leitura_msgs()
+        for i in range(1,len(msgs)):
+            print("Fofoca: ",i," - ",c.descript_msg(msgs[i]))
     elif(op == '3'):
         os.system("clear")
-        print("Tamo no 3")
+        if (key != ""):
+            fofoca = str(input("Conte-me uma fofoca: "))
+            c.post(fofoca,key)
+            os.system("clear")
+            print("Fofoca enviada")
+        else:
+            print("Crie uma identidade para comecar a fofocar")
     elif(op == '4'):
         os.system("clear")
         print("Finalizando...")
