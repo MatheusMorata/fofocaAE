@@ -17,8 +17,8 @@ def post(texto,chave,canal):
     os.system(comando2)
 
 # Consulta todas as mensagens
-def leitura_msgs():
-    comando1 = "freechains chain '$UERJ' consensus"
+def leitura_msgs(canal):
+    comando1 = "freechains chain '$"+canal+"' consensus"
     with os.popen(comando1) as processo:
         saida = processo.read()
 
