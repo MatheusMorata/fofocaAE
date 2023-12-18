@@ -27,8 +27,8 @@ def leitura_msgs(canal):
     return saida
 
 # Descriptografa as mensagens
-def descript_msg(hash):
-    comando = "freechains chain '$UERJ' get payload " + hash 
+def descript_msg(hash,canal):
+    comando = "freechains chain '$"+canal+"' get payload " + hash 
     with os.popen(comando) as processo:
         saida = processo.read()
     
