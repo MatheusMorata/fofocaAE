@@ -7,10 +7,14 @@ def menu():
     print("\n=== fofocaAE Menu ===")
     print("1. Criar identidade")
     print("2. Ver fofocas")
-    print("3. Postar fofoca")
-    print("4. Sair")
+    print("3. Postar uma fofoca")
+    print("4. Comentar uma fofoca")
+    print("5. Ver comentarios de uma fofoca")
+    print("6. Dar like em fofoca")
+    print("7. Dar dislike em fofoca")
+    print("8. Sair")
 
-while(op != '4'):
+while(op != '8'):
     menu()
     op = str(input("Digite uma opcao: "))
 
@@ -34,6 +38,16 @@ while(op != '4'):
         else:
             print("Crie uma identidade para comecar a fofocar")
     elif(op == '4'):
+       os.system("clear")
+       num = str(input("Digite o numero da fofoca: "))
+        
+    elif(op == '5'):
+
+    elif(op == '6'):
+
+    elif(op == '7'):
+
+    elif(op == '8'):
         os.system("clear")
         print("Finalizando...")
     else:
