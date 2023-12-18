@@ -3,7 +3,11 @@ import os
 # Cria uma identidade dentro da rede
 def criar_identidade(nome):
     comando = "freechains keys shared '" + nome + "'"
-    os.system(comando)
+    with os.popen(comando) as processo:
+        saida = processo.read()
+    
+    # Retorna a saída do comando
+    return saida
 
 # Posta um texto dentro da rede
 def post(texto,chave):
@@ -12,8 +16,24 @@ def post(texto,chave):
     os.system(comando1)
     os.system(comando2)
 
-def consult_msgs():
+# Consulta todas as mensagens
+def leitura_msgs():
     comando1 = "freechains chain '$UERJ' consensus"
+    with os.popen(comando1) as processo:
+        saida = processo.read()
+
+    saida = saida.split()    
+    # Retorna a saída do comando
+    return saida
+
+def descript_msg(hash):
+    comando = "freechains chain '$UERJ' get payload " + hash 
+    with os.popen(comando) as processo:
+        saida = processo.read()
     
+    # Retorna a saída do comando
+    return saida
+
+
 
 
