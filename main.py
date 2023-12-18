@@ -44,7 +44,7 @@ while(op != '8'):
             if((int(num_fofoca) != 0) and (int(num_fofoca) <= int(len(c.leitura_msgs(canal))))):
                 comentario = str(input("Digite o comentario: "))
                 canal_comentario = 'comentario'+num_fofoca 
-                post(comentario,key,canal_comentario)
+                c.post(comentario,key,canal_comentario)
                 os.system("clear")
                 print("Comentario enviado")
             else:
@@ -55,14 +55,22 @@ while(op != '8'):
     elif(op == '5'):
        os.system("clear")
        num = str(input("Digite o numero da fofoca que voce deseja ver: "))
-       
+       canal_comentario = "comentario"+num
+       if((int(num_fofoca) != 0) and (int(num_fofoca) <= int(len(c.leitura_msgs(canal))))):
+            msgs = c.leitura_msgs(canal_comentario)
+            for i in range(1,len(msgs)):
+                print("Comentario: ",i," - ",c.descript_msg(msgs[i],canal_comentario))
+       else:
+            print("Esta fofoca nao existe")
     elif(op == '6'):
         os.system("clear")
-        print("Tamo no 6")
+        num = str(input("Digite o numero da fofoca que voce deseja dar like: "))
+        c.like()
 
     elif(op == '7'):
        os.system("clear")
-       print("Tamo no 7")
+       num = str(input("Digite o numero da fofoca que voce deseja dar dislike: "))
+       c.dislike()
 
     elif(op == '8'):
         os.system("clear")
