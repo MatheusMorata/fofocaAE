@@ -54,8 +54,8 @@ while(op != '8'):
 
     elif(op == '5'):
        os.system("clear")
-       print("Tamo no 5")
-
+       num = str(input("Digite o numero da fofoca que voce deseja ver: "))
+       
     elif(op == '6'):
         os.system("clear")
         print("Tamo no 6")
