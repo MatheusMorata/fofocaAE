@@ -12,7 +12,7 @@ def criar_identidade(nome):
 # Posta um texto dentro da rede
 def post(texto,chave,canal):
     comando1 = "freechains chains join '$"+canal+"' " + chave 
-    comando2 = "freechains chain '$"+UERJ+"' post inline '" + texto + "'"
+    comando2 = "freechains chain '$"+canal+"' post inline '" + texto + "'"
     os.system(comando1)
     os.system(comando2)
 
