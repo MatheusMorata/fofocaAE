@@ -26,6 +26,7 @@ def leitura_msgs():
     # Retorna a saída do comando
     return saida
 
+# Descriptografa as mensagens
 def descript_msg(hash):
     comando = "freechains chain '$UERJ' get payload " + hash 
     with os.popen(comando) as processo:
