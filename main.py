@@ -38,8 +38,19 @@ while(op != '8'):
         else:
             print("Crie uma identidade para comecar a fofocar")
     elif(op == '4'):
-       os.system("clear")
-       print("Tamo no 4")
+        os.system("clear")
+        if(key != ""):
+            num_fofoca = str(input("Digite o numero da fofoca que deseja comentar: "))
+            if((int(num_fofoca) != 0) and (int(num_fofoca) <= int(len(c.leitura_msgs(canal))))):
+                comentario = str(input("Digite o comentario: "))
+                canal_comentario = 'comentario'+num_fofoca 
+                post(comentario,key,canal_comentario)
+                os.system("clear")
+                print("Comentario enviado")
+            else:
+                print("Esta fofoca nao existe")
+        else:
+            print("Crie uma identidade para comentar")
 
     elif(op == '5'):
        os.system("clear")
@@ -52,7 +63,7 @@ while(op != '8'):
     elif(op == '7'):
        os.system("clear")
        print("Tamo no 7")
-       
+
     elif(op == '8'):
         os.system("clear")
         print("Finalizando...")
