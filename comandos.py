@@ -1,8 +1,16 @@
 import os
 
 # Cria uma identidade dentro da rede
-def criar_identidade(nome):
+def criar_key(nome):
     comando = "freechains keys shared '" + nome + "'"
+    with os.popen(comando) as processo:
+        saida = processo.read()
+    
+    # Retorna a saída do comando
+    return saida
+
+def criar_pvt(nome):
+    comando = "freechains keys pubpvt '" + nome + "'"
     with os.popen(comando) as processo:
         saida = processo.read()
     

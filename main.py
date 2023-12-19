@@ -2,7 +2,9 @@ import comandos as c
 import os 
 canal = "UERJ"
 key = ""
+key_pvt = ""
 op = 0
+
 def menu():
     print("\n=== fofocaAE Menu ===")
     print("1. Ver fofocas")
