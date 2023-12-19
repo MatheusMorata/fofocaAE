@@ -20,7 +20,7 @@ def criar_pvt(nome):
 
 # Posta um texto dentro da rede
 def post(texto,chave,canal):
-    comando1 = "freechains chains join '$"+canal+"' " + chave 
+    comando1 = "freechains chains join '$#"+canal+"' " + chave 
     comando2 = "freechains chain '$"+canal+"' post inline '" + texto + "'"
     os.system(comando1)
     os.system(comando2)
@@ -44,12 +44,5 @@ def descript_msg(hash,canal):
     # Retorna a saída do comando
     return saida
 
-def like(canal,hash,key):
-    comando = "freechains chain '$"+canal+"' like '"+hash+"' --sign='"+key+"'"
-    os.system(comando)
-    print(comando)
 
-def dislike(canal,hash,key):
-    comando = "freechains chain '$"+canal+"' dislike '"+hash+"' --sign='"+key+"'"
-    os.system(comando)
 
