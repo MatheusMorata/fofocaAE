@@ -64,13 +64,25 @@ while(op != '8'):
             print("Esta fofoca nao existe")
     elif(op == '6'):
         os.system("clear")
-        num = str(input("Digite o numero da fofoca que voce deseja dar like: "))
-        c.like()
+        num_fofoca = int(input("Digite o numero da fofoca que voce deseja dar like: "))
+        if((int(num_fofoca) != 0) and (int(num_fofoca) <= int(len(c.leitura_msgs(canal))))):
+            hash = c.leitura_msgs(canal)
+            c.like(canal,hash[num_fofoca],key)
+            
+            print("Like enviado")
+        else:
+            print("Fofoca nao existe")
 
     elif(op == '7'):
        os.system("clear")
-       num = str(input("Digite o numero da fofoca que voce deseja dar dislike: "))
-       c.dislike()
+       num_fofoca = int(input("Digite o numero da fofoca que voce deseja dar dislike: "))
+       if((int(num_fofoca) != 0) and (int(num_fofoca) <= int(len(c.leitura_msgs(canal))))):
+            hash = c.leitura_msgs(canal)
+            c.dislike(canal,hash[num_fofoca],key)
+            os.system("clear")
+            print("Dislike enviado")
+       else:
+            print("Fofoca nao existe")
 
     elif(op == '8'):
         os.system("clear")

@@ -35,11 +35,12 @@ def descript_msg(hash,canal):
     # Retorna a saída do comando
     return saida
 
-def like(canal,hash):
-    comando = "freechains chain '$"+canal+"' like "+hash
+def like(canal,hash,key):
+    comando = "freechains chain '$"+canal+"' like '"+hash+"' --sign='"+key+"'"
     os.system(comando)
+    print(comando)
 
-def dislike(canal,hash):
-    comando = "freechains chain '$"+canal+"' dislike "+hash
+def dislike(canal,hash,key):
+    comando = "freechains chain '$"+canal+"' dislike '"+hash+"' --sign='"+key+"'"
     os.system(comando)
 
