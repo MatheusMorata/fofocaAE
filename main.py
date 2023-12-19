@@ -23,8 +23,8 @@ while(palavra == ''):
         print("Digite um texto")
     else:
         key = c.criar_key(palavra)
-        key_pvt = c.criar_pvt(palavra)
-        os.system("clear")
+        key_pvt = c.criar_pvt(palavra).split()[1]
+        print(key_pvt)
 
 while(op != '7'):
     menu()
@@ -71,7 +71,7 @@ while(op != '7'):
                 print("Comentario: ",i," - ",c.descript_msg(msgs[i],canal_comentario))
        else:
             print("Esta fofoca nao existe")
-        elif(op == '5'):
+    elif(op == '5'):
         os.system("clear")
         num_fofoca = int(input("Digite o numero da fofoca que voce deseja dar like: "))
         # Verifica se a fofoca existe
