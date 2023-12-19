@@ -7,6 +7,7 @@ O projeto é bem simples, nele você pode publicar fofocas, comentar fofocas e d
 
 ## Como instalar e usar.
 <p>O projeto bem simples de instalar e usar. Em primeiro lugar, você deve ter alguns requisitos.</p>
+
 ### Requisitos
 
 - Sistema operacional Linux.
