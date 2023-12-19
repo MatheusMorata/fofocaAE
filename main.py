@@ -5,30 +5,24 @@ key = ""
 op = 0
 def menu():
     print("\n=== fofocaAE Menu ===")
-    print("1. Criar identidade")
-    print("2. Ver fofocas")
-    print("3. Postar uma fofoca")
-    print("4. Comentar uma fofoca")
-    print("5. Ver comentarios de uma fofoca")
-    print("6. Dar like em fofoca")
-    print("7. Dar dislike em fofoca")
-    print("8. Sair")
+    print("1. Ver fofocas")
+    print("2. Postar uma fofoca")
+    print("3. Comentar uma fofoca")
+    print("4. Ver comentarios de uma fofoca")
+    print("5. Dar like em fofoca")
+    print("6. Dar dislike em fofoca")
+    print("7. Sair")
 
-while(op != '8'):
+while(op != '7'):
     menu()
     op = str(input("Digite uma opcao: "))
 
     if(op == '1'):
         os.system("clear")
-        nome = str(input("Digite a identidade que deseja usar: "))
-        key = c.criar_identidade(nome)
-        print("Sua identidade: "+key)
-    elif(op == '2'):
-        os.system("clear")
         msgs = c.leitura_msgs(canal)
         for i in range(1,len(msgs)):
             print("Fofoca: ",i," - ",c.descript_msg(msgs[i],canal))
-    elif(op == '3'):
+    elif(op == '2'):
         os.system("clear")
         if (key != ""):
             fofoca = str(input("Conte-me uma fofoca: "))
@@ -37,7 +31,7 @@ while(op != '8'):
             print("Fofoca enviada")
         else:
             print("Crie uma identidade para comecar a fofocar")
-    elif(op == '4'):
+    elif(op == '3'):
         os.system("clear")
         if(key != ""):
             num_fofoca = str(input("Digite o numero da fofoca que deseja comentar: "))
@@ -52,7 +46,7 @@ while(op != '8'):
         else:
             print("Crie uma identidade para comentar")
 
-    elif(op == '5'):
+    elif(op == '4'):
        os.system("clear")
        num = str(input("Digite o numero da fofoca que voce deseja ver: "))
        canal_comentario = "comentario"+num
@@ -62,7 +56,7 @@ while(op != '8'):
                 print("Comentario: ",i," - ",c.descript_msg(msgs[i],canal_comentario))
        else:
             print("Esta fofoca nao existe")
-    elif(op == '6'):
+    elif(op == '5'):
         os.system("clear")
         num_fofoca = int(input("Digite o numero da fofoca que voce deseja dar like: "))
         if((int(num_fofoca) != 0) and (int(num_fofoca) <= int(len(c.leitura_msgs(canal))))):
@@ -73,7 +67,7 @@ while(op != '8'):
         else:
             print("Fofoca nao existe")
 
-    elif(op == '7'):
+    elif(op == '6'):
        os.system("clear")
        num_fofoca = int(input("Digite o numero da fofoca que voce deseja dar dislike: "))
        if((int(num_fofoca) != 0) and (int(num_fofoca) <= int(len(c.leitura_msgs(canal))))):
@@ -84,7 +78,7 @@ while(op != '8'):
        else:
             print("Fofoca nao existe")
 
-    elif(op == '8'):
+    elif(op == '7'):
         os.system("clear")
         print("Finalizando...")
     else:
