@@ -13,7 +13,9 @@ def menu():
     print("2. Postar uma fofoca")
     print("3. Comentar uma fofoca")
     print("4. Ver comentarios de uma fofoca")
-    print("5. Sair")
+    print("5. Dar like em fofoca")
+    print("6. Dar dislike em fofoca")
+    print("7. Sair")
 
 while(palavra == ''):
     palavra = str(input("Digite um texto para ser usado como chave: "))
@@ -24,7 +26,7 @@ while(palavra == ''):
         key_pvt = c.criar_pvt(palavra)
         os.system("clear")
 
-while(op != '5'):
+while(op != '7'):
     menu()
     op = str(input("Digite uma opcao: "))
 
@@ -69,11 +71,34 @@ while(op != '5'):
                 print("Comentario: ",i," - ",c.descript_msg(msgs[i],canal_comentario))
        else:
             print("Esta fofoca nao existe")
+        elif(op == '5'):
+        os.system("clear")
+        num_fofoca = int(input("Digite o numero da fofoca que voce deseja dar like: "))
+        # Verifica se a fofoca existe
+        if((int(num_fofoca) != 0) and (int(num_fofoca) <= int(len(c.leitura_msgs(canal))))):
+            hash = c.leitura_msgs(canal)
+            c.like(canal,hash[num_fofoca],key_pvt)
+            os.system("clear")
+            print("Like enviado")
+        else:
+            print("Fofoca nao existe")
 
+    elif(op == '6'):
+       os.system("clear")
+       num_fofoca = int(input("Digite o numero da fofoca que voce deseja dar dislike: "))
+       # Verifica se a fofoca existe
+       if((int(num_fofoca) != 0) and (int(num_fofoca) <= int(len(c.leitura_msgs(canal))))):
+            hash = c.leitura_msgs(canal)
+            c.dislike(canal,hash[num_fofoca],key_pvt)
+            os.system("clear")
+            print("Dislike enviado")
+       else:
+            print("Fofoca nao existe")
+        
     elif(op == '7'):
         os.system("clear")
         print("Finalizando...")
-        
+
     else:
         os.system("clear")
         print("Opcao invalida")
